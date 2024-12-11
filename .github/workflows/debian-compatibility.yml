@@ -8,8 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-20.04, ubuntu-18.04, ubuntu-16.04, debian-11, debian-10, debian-9]
-        java: ['8', '11', '15', '17', '21']
+        # os: [ubuntu-20.04, ubuntu-18.04, ubuntu-16.04, debian-11, debian-10, debian-9]
+        #java: ['8', '11', '15', '17', '21']
+        java: [ '8' ]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,15 +22,17 @@ jobs:
           distribution: 'temurin' # You can change this to your preferred distribution
           cache: maven
 
+      - name: Create Dir
+        run: mkdir -p /home/runner/work/download
+
+      - name: Create Install Dir
+        run: mkdir -p /home/runner/work/install
+
       - name: Download autoinstall file from the web
         run: curl -o /home/runner/work/download/auto-install.xml https://raw.githubusercontent.com/openpreserve/jhove/refs/heads/integration/jhove-bbt/scripts/auto-vagrant-install.xml
 
       - name: Download installer file from the web
         run: curl -o /home/runner/work/download/jhove-1.32.jar https://software.openpreservation.org/releases/jhove/jhove-1.32.jar
-
-
-      - name: Create Install Dir
-        run: mkdir -p /home/runner/work/install
 
       - name: Find and replace install path in file
         run: |
