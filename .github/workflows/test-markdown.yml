@@ -1,0 +1,26 @@
+name: PR QA
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to run the workflow on'
+        required: true
+        default: 'markdown2html'
+
+jobs:
+  lint-markdown:
+    name: Lint Markdown Files
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Use the branch specified in workflow_dispatch input
+          ref: ${{ github.event.inputs.branch }}
+      - name: Lint Markdown files
+        run: |
+          npm install -g markdownlint-cli
+          markdownlint "**/*.md"
+
+
