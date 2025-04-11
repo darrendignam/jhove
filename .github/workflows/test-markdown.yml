@@ -7,6 +7,9 @@ on:
         description: 'Branch to run the workflow on'
         required: true
         default: 'markdown2html'
+  push: # Add push trigger
+    branches:
+      - '**' # Match all branches
 
 jobs:
   lint-markdown:
