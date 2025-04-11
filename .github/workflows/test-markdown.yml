@@ -1,5 +1,5 @@
-name: PR QA
-
+name: Test Markdown Files
+# This workflow lints Markdown files in the repository.
 on:
   workflow_dispatch:
     inputs:
