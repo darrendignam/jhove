@@ -1,5 +1,7 @@
 name: Test Markdown Files
 # This workflow lints Markdown files in the repository.
+# It is triggered on pull requests and can also be run manually.
+
 on:
   workflow_dispatch:
     inputs:
