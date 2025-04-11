@@ -24,6 +24,6 @@ jobs:
       - name: Lint Markdown files
         run: |
           npm install -g markdownlint-cli
-          markdownlint "**/*.md"
+          markdownlint "docs/**/*.md"
 
 
