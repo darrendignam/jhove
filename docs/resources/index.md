@@ -22,3 +22,4 @@ layout: page
 - [Unified Digital Format Registry (UDFR)](http://www.udfr.org/)
 - [Sustainability of Digital Formats](http://www.digitalpreservation.gov/formats/) — Library of Congress
 - [File Formats Blog](http://fileformats.wordpress.com)
+- [Obsolete Thor. Ramblings of a File Format researcher](https://preservation.tylerthorsted.com/)
